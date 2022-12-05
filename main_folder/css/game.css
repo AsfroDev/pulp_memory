@@ -8,6 +8,16 @@
     align-items: center;
 }
 
+.central {
+    animation: fadeInMove 1s;
+}
+
+@keyframes fadeInMove {
+    0% { opacity: 0 }
+    0% { padding-bottom: 20vh;   }
+    100% { opacity: 1; }
+  }
+
 .central h1 {
     color: #333;
     font-size: 1.5em;
@@ -26,5 +36,12 @@
     color: #333;
     font-size: 0.5em;
     margin-bottom: 10px;
-    
 }
+
+.central h4 {animation: slowFade 3s;}
+
+@keyframes slowFade {
+    0% { opacity: 0; }
+    80% {opacity: 0;}
+    100% { opacity: 1; }
+  }

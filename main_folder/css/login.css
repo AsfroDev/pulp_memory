@@ -1,4 +1,5 @@
 .login-form {
+    padding-bottom: 20vh;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -6,7 +7,16 @@
     justify-content: center;
 }
 
-.login-header   {
+.login-form {
+    animation: fadeIn 2.2s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+.login-header {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -14,17 +24,17 @@
     margin-bottom: 50px;
 }
 
-.login-header img   {
+.login-header img {
     width: 300px;
     margin-bottom: 30px;
 }
 
-.login-header h1    {
+.login-header h1 {
     color: #333;
     font-size: 1.5em;
 }
 
-.login-input    {
+.login-input {
     border: 2px solid #333;
     border-radius: 8px;
     color: #333;
@@ -35,7 +45,7 @@
     width: 100%;
 }
 
-.login-button   {
+.login-button {
     background-color: #ee665c;
     border-radius: 8px;
     color: #fff;
@@ -46,7 +56,7 @@
     width: 100%;
 }
 
-.login-button:disabled  {
+.login-button:disabled {
     background-color: #eee;
     color: #aaa;
     cursor: auto;
