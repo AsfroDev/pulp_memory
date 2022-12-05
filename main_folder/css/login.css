@@ -8,7 +8,7 @@
 }
 
 .login-form {
-    animation: fadeIn 2.2s
+    animation: fadeIn 2.2s;
 }
 
 @keyframes fadeIn {
