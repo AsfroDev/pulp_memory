@@ -46,8 +46,8 @@ const checkEndGame = () => {
     const disableCards = document.querySelectorAll('.disable-card');
 
     if (disableCards.length === 18) {
-        clearInterval(this.loop);
-        alert('Parabéns ' + spanPlayer + '!' + 'Seu tempo foi ' + timer);
+        clearInterval(this.loop);    
+        alert('Parabéns ' + localStorage.getItem('player') + '!  Seu tempo foi: ' + timer.innerHTML);
         window.location.href = '../pages/login.html';
     }
 }
@@ -57,7 +57,7 @@ const checkCards = () => {
     const secondCharacter = secondCard.getAttribute('data-character');
 
     if (firstCharacter === secondCharacter) {
-
+    
         firstCard.firstChild.classList.add('disable-card');
         secondCard.firstChild.classList.add('disable-card');
 
