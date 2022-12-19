@@ -5,7 +5,29 @@
             e obrigado por inspecionar o código <3
 */
 
-
+/*main*/
+  main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/bg-pulp.jpg);
+    background-size: cover;
+  }
+/*header*/
+  header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(51, 51, 51, 0.144);
+    width: 100%;
+    max-width: 340px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 0.6em;
+  }
 /*central alert*/
     .central {
         display: grid;
@@ -46,7 +68,7 @@
   
       }
 
-/*quadro/window of game*/
+/*grid*/
   .grid{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -81,10 +103,10 @@
   .back{
     border: #333 2px solid;
     background-image: url('../images/brain.png');
-    background-size: 110px 158px;
+    background-size: 120px 120px;
     backface-visibility: hidden;
     background-position-y: -5px;
-    background-position-x: 9px;
+    background-position-x: -1px;
   }
   .reveal-card{
     transform: rotatey(180deg);
@@ -93,3 +115,4 @@
     filter: saturate(0);
     opacity: 0.5;
   }
+  /*window of game*/

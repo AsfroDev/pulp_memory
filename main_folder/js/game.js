@@ -1,4 +1,6 @@
 const grid = document.querySelector('.grid');
+const spanPlayer = document.querySelector('.player');
+const timer = document.querySelector('.timer');
 
 const characters = [
     'vicent-james',
@@ -21,6 +23,15 @@ const createElement = (tag, className) => {
 let firstCard = '';
 let secondCard = '';
 
+const checkEndGame = () => {
+    const disableCards = document.querySelectorAll('.disable-card');
+
+    if (disableCards.length === 18) {
+        clearInterval(this.loop);
+        alert('Parabéns, ${spanPlayer.innerHTML}! Seu Tempo foi: ${timer.innerHTML}');
+    }
+}
+
 const checkCards = () => {
     const firstCharacter = firstCard.getAttribute('data-character');
     const secondCharacter = secondCard.getAttribute('data-character');
@@ -32,6 +43,8 @@ const checkCards = () => {
 
         firstCard = '';
         secondCard = '';
+
+        checkEndGame();
 
     } else {
         setTimeout(() => {
@@ -100,4 +113,24 @@ const loadGame = () =>{
     });
 }
 
-loadGame();
+const startTimer = () => {
+
+    this.loop = setInterval(() => {
+        const currentTimer = +timer.innerHTML;
+        timer.innerHTML = currentTimer +1;
+    }, 1000);
+
+}
+
+window.onload = () => {
+    
+     spanPlayer.innerHTML = localStorage.getItem('player');
+
+    startTimer();
+    loadGame();
+
+}
+
+// melhorar timer
+// tela de end game com botao reset p tela login e botao de abrir rank
+// telinha de rank
