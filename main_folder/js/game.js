@@ -126,13 +126,18 @@ window.onload = () => {
     
     spanPlayer.innerHTML = localStorage.getItem('player');
 
-    setTimeout(() => {
+    if (spanPlayer === '') {
+
+        window.location.href = 'pages/login.html';
+
+    } else {
+        setTimeout(() => {
             
-        startTimer();
-        loadGame();
-        
-    }, 3500);
-    
+            startTimer();
+            loadGame();
+            
+        }, 3500);
+    }
 
 }
 
