@@ -27,6 +27,13 @@
     padding: 15px;
     border-radius: 5px;
     font-size: 0.6em;
+    animation: slowFadeHeader 5s;
+  }
+  @keyframes slowFadeHeader {
+    0% { opacity: 0; }
+    80% {opacity: 0;}
+    100% { opacity: 1; }
+
   }
 /*central alert*/
     .central {
@@ -87,6 +94,13 @@
     position: relative;
     transition: all 500ms ease;
     transform-style: preserve-3d;
+    animation: slowFadeCard 1.1s;
+  }
+  @keyframes slowFadeCard {
+    0% { opacity: 0; }
+    80% {opacity: 0.5;}
+    100% { opacity: 1; }
+
   }
   .face{
     width: 100%;

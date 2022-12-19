@@ -2,6 +2,25 @@ const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
 const timer = document.querySelector('.timer');
 
+window.onload = () => {
+    
+    spanPlayer.innerHTML = localStorage.getItem('player');
+
+    if (timer >= 2) {
+
+        window.location = '../pages/login.html';
+
+    } else {
+        setTimeout(() => {
+            
+            startTimer();
+            loadGame();
+            
+        }, 5000);
+    }
+
+}
+
 const characters = [
     'vicent-james',
     'mia-wallace',
@@ -28,7 +47,8 @@ const checkEndGame = () => {
 
     if (disableCards.length === 18) {
         clearInterval(this.loop);
-        alert('Parabéns, ${spanPlayer.innerHTML}! Seu Tempo foi: ${timer.innerHTML}');
+        alert('Parabéns ' + spanPlayer + '!' + 'Seu tempo foi ' + timer);
+        window.location.href = '../pages/login.html';
     }
 }
 
@@ -121,26 +141,6 @@ const startTimer = () => {
     }, 1000);
 
 }
-
-window.onload = () => {
-    
-    spanPlayer.innerHTML = localStorage.getItem('player');
-
-    if (spanPlayer === '') {
-
-        window.location.href = 'pages/login.html';
-
-    } else {
-        setTimeout(() => {
-            
-            startTimer();
-            loadGame();
-            
-        }, 3500);
-    }
-
-}
-
 // melhorar timer
 // tela de end game com botao reset p tela login e botao de abrir rank
 // telinha de rank
