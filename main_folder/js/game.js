@@ -124,10 +124,15 @@ const startTimer = () => {
 
 window.onload = () => {
     
-     spanPlayer.innerHTML = localStorage.getItem('player');
+    spanPlayer.innerHTML = localStorage.getItem('player');
 
-    startTimer();
-    loadGame();
+    setTimeout(() => {
+            
+        startTimer();
+        loadGame();
+        
+    }, 3500);
+    
 
 }
 
