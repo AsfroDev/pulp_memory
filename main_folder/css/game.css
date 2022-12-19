@@ -1,47 +1,94 @@
-.central {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    
-    justify-content: center;
-    align-items: center;
-}
+/*Created by Marco Junior Git-Hub:@asfro-dev
+    Olá, este é meu primeiro projeto!
 
-.central {
-    animation: fadeInMove 1s;
-}
+        Feito com muito carinho, espero que goste
+            e obrigado por inspecionar o código <3
+*/
 
-@keyframes fadeInMove {
-    0% { opacity: 0 }
-    0% { padding-bottom: 5vh;   }
-    100% { opacity: 1; }
+
+/*central alert*/
+    .central {
+        display: grid;
+        max-width: 400px;
+        width: 100%;
+        margin: 20vw auto;
+        text-align: center;
+        animation: fadeInMove 1s;
+    }
+
+    @keyframes fadeInMove {
+        0% { opacity: 0 }
+        0% { padding-bottom: 5vh;   }
+        100% { opacity: 1; }
+    }
+
+    .central h1 {
+        color: #333;
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .central h2 {
+        text-align: center;
+        color: #333;
+        font-size: 1em;
+        margin-bottom: 20px;
+        
+    }
+
+    .central h4 {
+        color: #333;
+        font-size: 0.5em;
+        margin-bottom: 10px;
+    }
+
+    .central h4 {animation: slowFade 3s;}
+
+    @keyframes slowFade {
+        0% { opacity: 0; }
+        80% {opacity: 0;}
+        100% { opacity: 1; }
   }
 
-.central h1 {
-    color: #333;
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
+/*quadro/window of game*/
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .card{
+    aspect-ratio: 3/4;
+    width:100%;
+    background-color: #333;
+    border-radius: 5px;
+    position: relative;
+    transition: all 500ms ease;
+    transform-style: preserve-3d;
+  }
+  .face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+  }
+  .front {
+    background-size: cover;
+    transform: rotate(180deg);
+  }
+  .back{
+    border: #333 2px solid;
+    border-radius: 5px;
+    background-color: #333;
+    background-image: url('../images/brain.png');
+    background-size: 110px 158px;
+    backface-visibility: hidden;
+    background-position-y: -5px;
+    background-position-x: 9px;
+  }
 
-.central h2 {
-    text-align: center;
-    color: #333;
-    font-size: 1em;
-    margin-bottom: 20px;
-    
-}
-
-.central h4 {
-    color: #333;
-    font-size: 0.5em;
-    margin-bottom: 10px;
-}
-
-.central h4 {animation: slowFade 3s;}
-
-@keyframes slowFade {
-    0% { opacity: 0; }
-    80% {opacity: 0;}
-    100% { opacity: 1; }
+  .card:hover{
+    transform: rotatey(180deg);
   }
