@@ -76,12 +76,13 @@
   }
   .front {
     background-size: cover;
-    transform: rotate(180deg);
+    transform: rotatey(180deg);
+    border: #333 2px solid;
+    border-radius: 5px;
   }
   .back{
     border: #333 2px solid;
     border-radius: 5px;
-    background-color: #333;
     background-image: url('../images/brain.png');
     background-size: 110px 158px;
     backface-visibility: hidden;
