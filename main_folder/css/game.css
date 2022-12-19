@@ -11,23 +11,21 @@
         display: grid;
         max-width: 400px;
         width: 100%;
-        margin: 20vw auto;
+        margin: 10vw auto;
+        padding: 0 30px;
         text-align: center;
         animation: fadeInMove 1s;
     }
-
     @keyframes fadeInMove {
         0% { opacity: 0 }
         0% { padding-bottom: 5vh;   }
         100% { opacity: 1; }
     }
-
     .central h1 {
         color: #333;
         font-size: 1.5em;
         margin-bottom: 20px;
     }
-
     .central h2 {
         text-align: center;
         color: #333;
@@ -35,35 +33,34 @@
         margin-bottom: 20px;
         
     }
-
     .central h4 {
         color: #333;
         font-size: 0.5em;
         margin-bottom: 10px;
+        animation: slowFade 3s;
     }
-
-    .central h4 {animation: slowFade 3s;}
-
     @keyframes slowFade {
         0% { opacity: 0; }
         80% {opacity: 0;}
         100% { opacity: 1; }
-  }
+  
+      }
 
 /*quadro/window of game*/
   .grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 10px;
     max-width: 400px;
     width: 100%;
-    margin: 0 auto;
+    margin: 50px auto;
+    padding: 0 30px;
   }
   .card{
     aspect-ratio: 3/4;
     width:100%;
-    background-color: #333;
-    border-radius: 5px;
+    background-color: rgba(51, 51, 51, 0.74);
+    border-radius: 4px;
     position: relative;
     transition: all 500ms ease;
     transform-style: preserve-3d;
@@ -73,23 +70,26 @@
     height: 100%;
     position: absolute;
     background-position: center;
+    border-radius: 4px;
+    transition: all 400ms ease;
   }
   .front {
     background-size: cover;
     transform: rotatey(180deg);
     border: #333 2px solid;
-    border-radius: 5px;
   }
   .back{
     border: #333 2px solid;
-    border-radius: 5px;
     background-image: url('../images/brain.png');
     background-size: 110px 158px;
     backface-visibility: hidden;
     background-position-y: -5px;
     background-position-x: 9px;
   }
-
-  .card:hover{
+  .reveal-card{
     transform: rotatey(180deg);
+  }
+  .disable-card{
+    filter: saturate(0);
+    opacity: 0.5;
   }
