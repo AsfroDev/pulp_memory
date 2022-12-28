@@ -2,6 +2,11 @@ const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
 const timer = document.querySelector('.timer');
 
+const popup = document.querySelector('.modal')
+const overlay = document.querySelector('.overlay')
+const finalMsg = document.querySelector('.modal-body')
+
+
 window.onload = () => {
     
     spanPlayer.innerHTML = localStorage.getItem('player');
@@ -47,8 +52,7 @@ const checkEndGame = () => {
 
     if (disableCards.length === 18) {
         clearInterval(this.loop);    
-        alert('Parabéns ' + localStorage.getItem('player') + '!  Seu tempo foi: ' + timer.innerHTML);
-        window.location.href = '../pages/login.html';
+        finalMsg.value = 'Parabéns ' + localStorage.getItem('player') + '!  Seu tempo foi: ' + timer.innerHTML
     }
 }
 
@@ -141,6 +145,21 @@ const startTimer = () => {
     }, 1000);
 
 }
+
+popup.addEventListener('click', event => {
+    const classNameOfClickedElement = event.target.classList[0]
+    const classNames = ['close-button', 'btn-reset']
+    const shouldClosePopup = classNames.some(className => className === classNameOfClickedElement)
+    
+    if (shouldClosePopup) {
+        popup.style.display = 'none'
+        overlay.style.display = 'none'
+        window.location.href = '../pages/login.html';
+    }
+    
+})
+
+
 // melhorar timer
 // tela de end game com botao reset p tela login e botao de abrir rank
 // telinha de rank
