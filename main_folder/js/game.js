@@ -53,6 +53,8 @@ const checkEndGame = () => {
     if (disableCards.length === 18) {
         clearInterval(this.loop);    
         finalMsg.value = 'Parabéns ' + localStorage.getItem('player') + '!  Seu tempo foi: ' + timer.innerHTML
+        popup.style.display = 'block'
+        overlay.style.display = 'block'
     }
 }
 
@@ -154,7 +156,12 @@ popup.addEventListener('click', event => {
     if (shouldClosePopup) {
         popup.style.display = 'none'
         overlay.style.display = 'none'
-        window.location.href = '../pages/login.html';
+        setTimeout(() => {
+
+            window.location.href = '../pages/login.html';
+            
+        }, 500);
+        
     }
     
 })
