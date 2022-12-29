@@ -52,7 +52,7 @@ const checkEndGame = () => {
 
     if (disableCards.length === 18) {
         clearInterval(this.loop);    
-        finalMsg.value = 'Parabéns ' + localStorage.getItem('player') + '!  Seu tempo foi: ' + timer.innerHTML
+        finalMsg.innerHTML = 'Parabéns ' + localStorage.getItem('player') + '!  Seu tempo foi: ' + timer.innerHTML
         popup.style.display = 'block'
         overlay.style.display = 'block'
     }
